@@ -1,12 +1,12 @@
 <template>
   <div class="card" @click="$emit('cardClick', restaurant.id)">
     <div class="card_image">
-      <img :src="restaurant?.image ? 'http://localhost:3000/' + restaurant?.image : ''" :alt="restaurant?.name" />
+      <img :src="restaurant?.image ? imageUrl + restaurant?.image : ''" :alt="restaurant?.name" />
     </div>
     <div class="card_content">
       <h2 class="card_title">{{ restaurant?.name }}</h2>
       <star-rating
-        :rating="restaurant?.rating"
+        :rating="parseFloat(restaurant?.rating)"
         :read-only="true"
         class="star-rating"
         :star-size="20"
@@ -29,6 +29,11 @@
 import StarRating from 'vue-star-rating';
 
 export default {
+  data() {
+    return {
+      imageUrl: import.meta.env.VITE_RAILS_API_ENDPOINT,
+    };
+  },
   components: {
     StarRating,
   },

@@ -33,7 +33,7 @@ export default {
   },
   created() {
     axios
-      .get('http://localhost:3000/restaurants')
+      .get(`${import.meta.env.VITE_RAILS_API_ENDPOINT}/restaurants`)
       .then((response) => {
         this.restaurants = response.data;
       })

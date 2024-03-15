@@ -1,29 +1,42 @@
-# heal-security-frontend
+# Heal Security Restaurant Frontend Application
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a Vue.js application that interacts with a Rails API to display restaurant data. The application uses Axios to fetch data and Vue Router for navigation.
 
-## Recommended IDE Setup
+## Prerequisites
+- Node.js (preferably the latest LTS version)
+- npm (usually comes with Node.js)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Setup Instructions
 
-## Customize configuration
+1. **Clone the Repository**
+First, clone the repository to your local machine.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+```bash
+git clone https://github.com/moonc4ke/heal-security-frontend.git
+cd heal-security-frontend
+```
 
-## Project Setup
+2. **Install Dependencies** Install the necessary Node.js dependencies including Vue CLI, Axios, and Vue Router.
 
-```sh
+```bash
+yarn install
+
+or
+
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+3. **Serve Application** To start the application in development mode, run:
+   
+```bash
+yarn dev
 
-```sh
+or
+
 npm run dev
 ```
+This will compile the application and serve it on http://localhost:5173 by default.
 
-### Compile and Minify for Production
+## Configuring the API URL
 
-```sh
-npm run build
-```
+By default, the application expects the Rails API to be running on http://localhost:3000. If your API is running on a different port or URL, you will need to update Rails Rest API URL in the .env file.

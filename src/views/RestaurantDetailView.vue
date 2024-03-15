@@ -19,7 +19,7 @@ export default {
   },
   created() {
     const id = this.$route.params.id;
-    axios.get(`http://localhost:3000/restaurants/${id}`)
+    axios.get(`${import.meta.env.VITE_RAILS_API_ENDPOINT}/restaurants/${id}`)
       .then(response => {
         this.restaurant = response.data;
       })
